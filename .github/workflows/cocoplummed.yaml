@@ -8,22 +8,22 @@ on:
       - 'house/room/bed/hi.js'
 
 jobs:
-  job1_check_file_exist:
+  job1:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout current repo
         uses: actions/checkout@v3
-  
       - name: Install Python
         uses: actions/setup-python@v2
         with:
           python-version: '3.8' 
-          
+#######################################################
+
       - name: Run if file exists.
         run: |
-          file_exists=`test -e ./house/room/bed/hi.js && echo true || echo false `
-          /usr/bin/bash <<"EOF"
-          
+          cat << EOF > backup.sh
+          #!/bin/bash
+          file_exists=$(test -e ./house/room/bed/hi.js && echo true || echo false)
           if [$file_exists == true];
           then
             pwd
