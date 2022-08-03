@@ -3,7 +3,7 @@ name: Triggering on Paths
 on:
   push:
     branches:
-      - main/sweet-cocoplum/house/room/bed/**
+      - 'main/sweet-cocoplum/house/room/bed/**'
     
     
 
