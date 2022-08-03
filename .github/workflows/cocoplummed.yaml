@@ -21,6 +21,13 @@ jobs:
 
       - name: Run if file exists.
         run: |
-          file_exists=$(test -e ./house/room/bed/hi.js && echo true-x0x0 || echo false)
-          echo $file_exists
+          file_exists=$(test -e ./house/room/bed/hi.js && echo true || echo false) \
+          if [$file_exists == true]; \
+          then \
+            pwd \
+            whoami \
+            tree \
+          else \
+            echo "done" \
+          fi
           
