@@ -2,6 +2,8 @@ name: Triggering on Paths
 
 on:
   push:
+    branches:
+      - main
     paths:
       - 'sweet-cocoplum/house/room/bed/**'
 
