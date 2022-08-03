@@ -21,7 +21,7 @@ jobs:
           
       - name: Run if file exists.
         run: |
-          file_exists=$(test -e ./house/room/bed/hi.js && echo true || echo false)
+          file_exists=`test -e ./house/room/bed/hi.js && echo true || echo false `
           /usr/bin/bash <<"EOF"
           
           if [$file_exists == true];
