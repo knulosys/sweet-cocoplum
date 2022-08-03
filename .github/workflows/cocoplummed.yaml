@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'house/room/bed/**.js'
+      - 'house/room/bed/hi.js'
     
     
 
