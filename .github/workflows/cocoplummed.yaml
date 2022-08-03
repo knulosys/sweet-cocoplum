@@ -3,7 +3,7 @@ name: Triggering on Paths
 on:
   push:
     paths:
-      - 'sweet-cocoplum/house/room/bed/**.js'
+      - 'house/room/bed/**.js'
     
     
 
