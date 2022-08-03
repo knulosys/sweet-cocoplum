@@ -21,16 +21,6 @@ jobs:
 
       - name: Run if file exists.
         run: |
-          cat << EOF > test.sh
-          
           file_exists=$(test -e ./house/room/bed/hi.js && echo true || echo false)
-          if [$file_exists == true];
-          then
-            pwd
-            whoami
-            tree
-          else
-            echo "done"
-          fi
-          EOF
-          bash test.sh
+          echo $file_exists
+          
