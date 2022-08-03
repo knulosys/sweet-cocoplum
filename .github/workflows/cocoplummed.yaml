@@ -6,8 +6,8 @@ on:
       - main
     paths:
       - 'house/room/bed/hi.js'
-  branch_protection_rule:
-    types: [created, edited]
+      - 'created'
+      - 'edited'
     
     
     
