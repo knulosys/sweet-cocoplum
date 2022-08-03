@@ -6,14 +6,18 @@ on:
       - main
     paths:
       - 'house/room/bed/hi.js'
-  create:
-  
-    
 
 jobs:
-  hello_world:
+  job1_check_file_exist:
     runs-on: ubuntu-latest
-
+    steps:
+      - name: Checkout current repo
+        uses: actions/checkout@v3
+    
+    
+  job2_run_commands:
+    runs-on: ubuntu-latest
+    needs: [job1_check_file_exist]
     steps:
       - name: Checkout current repo
         uses: actions/checkout@v3
