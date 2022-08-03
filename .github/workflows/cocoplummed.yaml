@@ -1,0 +1,30 @@
+name: Triggering on Paths
+
+on:
+  pull_request:
+    types:
+      - closed
+    paths:
+      - '/scripts/var_sets_workspaces/**'
+
+jobs:
+  create_var_sets_workspaces:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout current repo
+        uses: actions/checkout@v3
+      
+      - name: Install Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+
+      - name: Install prerequisites
+        run: |
+          sudo apt install python3-pip
+          pip3 install terrasnek
+      
+      - name: Run the python script.
+        run: |
+          cd ./scripts/var_sets_workspaces/
