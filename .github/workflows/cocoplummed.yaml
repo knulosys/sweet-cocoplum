@@ -21,8 +21,9 @@ jobs:
           
       - name: Run if file exists.
         run: |
+          file_exists=$(test -e ./house/room/bed/hi.js && echo true || echo false)
           /usr/bin/bash <<"EOF"
-          file_exists=`test -e ./house/room/bed/hi.js && echo true || echo false`
+          
           if [$file_exists == true];
           then
             pwd
