@@ -1,7 +1,0 @@
-
-Hi
-You
-all
-here
-.
-.
