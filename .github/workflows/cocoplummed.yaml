@@ -1,14 +1,12 @@
 name: Triggering on Paths
 
 on:
-  pull_request:
-    types:
-      - closed
+  push:
     paths:
-      - '/scripts/var_sets_workspaces/**'
+      - 'sweet-cocoplum/house/room/bed/**'
 
 jobs:
-  create_var_sets_workspaces:
+  hello_world:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,7 +22,10 @@ jobs:
         run: |
           sudo apt install python3-pip
           pip3 install terrasnek
-      
-      - name: Run the python script.
-        run: |
-          cd ./scripts/var_sets_workspaces/
+          whoami
+          pwd
+          tree
+          cd /
+          pwd
+          whoami
+          tree
